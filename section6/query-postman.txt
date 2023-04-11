@@ -1,0 +1,11 @@
+Post
+curl --location 'http://localhost:8080/register' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: JSESSIONID=FACBECB5FDE6B05B2B4972ADF1819E12; XSRF-TOKEN=322ef91d-b87a-46b1-92fa-dacaa44ee5bb' \
+--data-raw '{
+    "name":"reda",
+    "email": "reda@gmail.com",
+    "mobileNumber": "123456778",
+    "pwd": "reda",
+    "role": "user"
+}'

@@ -1,0 +1,21 @@
+> cd keycloak-21.0.2
+
+> $ bin\kc.bat start-dev --http-port 8180
+
+
+get token 
+
+> curl --location 'http://localhost:8180/realms/Easybankdev/protocol/openid-connect/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Cookie: JSESSIONID=2A90FB918611596A7087FC2499C0EF39; XSRF-TOKEN=322ef91d-b87a-46b1-92fa-dacaa44ee5bb' \
+--data-urlencode 'client_id=easybankapi' \
+--data-urlencode 'client_secret=OIaMpOwBpCieNL2x7bp9wjTlT17ZKz0B' \
+--data-urlencode 'scope=openid email profile address' \
+--data-urlencode 'grant_type=client_credentials'
+
+send a request 
+
+> curl --location 'http://localhost:8080/myCards/?email=happy%40gmail.com' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0dFBTUDVJbS1BTmQ4Z043ZXlPM3padVhCOXBzbUVDWGNFc3ZLTE51VU5ZIn0.eyJleHAiOjE2ODEyMDAwMDUsImlhdCI6MTY4MTE5OTcwNSwianRpIjoiYWJiYzIzMmYtYjRhZS00ZDZiLTllMzctNWVhZDNjMzc5MzUyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgwL3JlYWxtcy9FYXN5YmFua2RldiIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJlMzA1MTljYi0yYmU2LTQ0YTUtODJiZC1mMTAzYjc5MjE1MzIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJlYXN5YmFua2FwaSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1lYXN5YmFua2RldiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgYWRkcmVzcyBlbWFpbCBwcm9maWxlIiwiYWRkcmVzcyI6e30sImNsaWVudEhvc3QiOiIxMjcuMC4wLjEiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudElkIjoiZWFzeWJhbmthcGkiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtZWFzeWJhbmthcGkiLCJjbGllbnRBZGRyZXNzIjoiMTI3LjAuMC4xIn0.LLY5oDGr4PyfdlJMvBV8XZpz55JXLjfI0RFJpFGI0yd3HXQSpM8YHpOrUaaRNyfEyogaAmOc5Baosi2p_rS8uUb4PJdjSf8Fpm6lESavA9CQxB762Nrxy30PfQrtyjEeY9ghZfM6bVXAivGTRxYTXqjGeUxKaN5z5HxijzLvUsbMbWOaFciJj6PDe8o1A97Yw8JxLqG3hzBJSN3EdMOWxCfzZG3z-CLIMNcWRiYDSJ1iTA8PsL8zY-yaLtH-AW7UY7jw4qHVdF063zAJd_35Lwts29euByRyVWwxjeOXbR717ZhG6UagU6hXuqGpUos0L7rH0caDHDr2jK1FVQsn5A' \
+--header 'Cookie: JSESSIONID=2A90FB918611596A7087FC2499C0EF39; XSRF-TOKEN=322ef91d-b87a-46b1-92fa-dacaa44ee5bb'
+
